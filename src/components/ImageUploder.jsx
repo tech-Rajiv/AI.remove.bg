@@ -61,7 +61,7 @@ function ImageUploder({
 
   const checkImageSize = (file) => {
     const fileSize = file.size / 1000000;
-    const maxSizeInMB = 5;
+    const maxSizeInMB = 10;
     if (fileSize < maxSizeInMB) {
       console.log("sizeis valid", fileSize);
       return file;
@@ -113,8 +113,8 @@ function ImageUploder({
         </div>
       </div>
       {error && (
-        <div className="text-red-500 absolute ml-6 text-sm font-stretch-50% mt-1">
-          {error}
+        <div className="text-yellow-500 absolute ml-6 text-sm font-stretch-50% mt-1">
+          <i className="ri-error-warning-fill mr-2"></i>{error}
         </div>
       )}
     </div>

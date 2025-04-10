@@ -78,8 +78,8 @@ function Home() {
   return (
     <div className="mt-5">
       <div className="px-2">
-        <h1 className="text-center font-bold text-3xl">AI Baground Remover</h1>
-        <p className="text-center mt-1">Remove baground from any images.</p>
+        <h1 className="text-center font-bold text-3xl">AI Background Remover</h1>
+        <p className="text-center mt-1">Remove background from any images.</p>
         <p className="text-center">
           Credit remaining per day :{" "}
           <span className="font-semibold">{limitRemaning}</span>
