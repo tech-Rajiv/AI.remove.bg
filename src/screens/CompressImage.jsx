@@ -81,7 +81,7 @@ function CompressImage() {
         <input
           type="range"
           min={20}
-          max={900}
+          max={400}
           value={range}
           onChange={(e) => setRange(e.target.value)}
           className="w-60 h-2 bg-purple-300 rounded-lg appearance-none cursor-pointer
