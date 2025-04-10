@@ -89,14 +89,14 @@ function ImageUploder({
               />
             )}
 
-            <p className="text-5xl  pb-2">+</p>
+            <p className="text-5xl  ">+</p>
           </label>
         </div>
 
         <div className="w-20 h-20 relative  rounded-xl   ml-2">
           {imageUploded ? (
             <div className="overflow-hidden rounded-xl w-full h-full">
-              <img className="w-full h-full" src={imageUploded} alt="" />
+              <img className="w-full h-full object-cover" src={imageUploded} alt="users image" />
             </div>
           ) : (
             <div className="overflow-hidden rounded-xl bg-gray-200 w-full h-full"></div>

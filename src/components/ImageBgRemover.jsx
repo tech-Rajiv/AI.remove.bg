@@ -8,7 +8,7 @@ function ImageBgRemover({ val, isLoading, doneRemoving, imageUploded }) {
     <section className="w-full mt-1 max-w-[400px] px-5">
       <div className="flex h-82 overflow-hidden w-82 max-w-96 justify-center  items-center rounded-xl outline outline-purple-300 ">
         {!imageUploded && !isLoading && !doneRemoving && (
-          <div className=" w-full h-full flex justify-center items-center  text-2lg">
+          <div className=" w-full object-cover h-full flex justify-center items-center  text-2lg">
             no image to preview
           </div>
         )}
