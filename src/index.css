@@ -1,7 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 
 @custom-variant dark (&:is(.dark *));
+
 
 :root {
   --radius: 0.625rem;
