@@ -14,7 +14,7 @@ function Home() {
   const ImageUploadHandler = async (file) => {
     const canFreeUseToday = checkFreeUseToday();
     if (!canFreeUseToday) {
-      setError("used all your credits ! please try again tommorrow");
+      setError("no credits! please try again tommorrow");
       return;
     }
     const image = URL.createObjectURL(file);
@@ -43,28 +43,21 @@ function Home() {
     if (data.date !== today) {
       localStorage.setItem(
         "bg_remove_usage",
-        JSON.stringify({ date: today, count: 2 })
+        JSON.stringify({ date: today, count: 1 })
       );
-      setLimitRemaining(limitRemaning - 1);
+      setLimitRemaining((prev) => prev - 1);
       return true;
     }
 
     if (data.count == 0) {
-      alert("u used all credits please try again tommorow");
       setLimitRemaining(0);
       return false;
     } else {
       data.count--;
-      setLimitRemaining(limitRemaning - 1);
+      setLimitRemaining((prev) => prev - 1);
       localStorage.setItem("bg_remove_usage", JSON.stringify(data));
       return true;
     }
-  };
-
-  const clearImage = () => {
-    setImageUploded(null);
-    setIsLoading(false);
-    setDoneRemoving("");
   };
 
   useEffect(() => {
@@ -75,10 +68,17 @@ function Home() {
     //console.log(typeof data.count === "number")
   }, []);
 
+  const clearImage = () => {
+    setImageUploded(null);
+    setIsLoading(false);
+    setDoneRemoving("");
+  };
   return (
     <div className="mt-5">
       <div className="px-2">
-        <h1 className="text-center font-bold text-3xl">AI Background Remover</h1>
+        <h1 className="text-center font-bold text-3xl">
+          AI Background Remover
+        </h1>
         <p className="text-center mt-1">Remove background from any images.</p>
         <p className="text-center">
           Credit remaining per day :{" "}

@@ -19,8 +19,8 @@ function ImageBgRemover({ val, isLoading, doneRemoving, imageUploded }) {
           </div>
         )}
         {doneRemoving && !isLoading && (
-          <div className="w-full h-full object-center">
-            <img src={doneRemoving} className="w-full h-full" alt="" />
+          <div className="w-full h-full ">
+            <img src={doneRemoving} className="w-full h-full object-cover" alt="bg removed image" />
           </div>
         )}
       </div>
